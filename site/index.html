@@ -19,5 +19,19 @@
       <div><input type="text" placeholder="请输入密码"></div>
       <button>登录</button>
     </div>
+    <script>
+      pushHistory();
+      window.addEventListener("popstate", function (e) {
+          alert("我监听到了浏览器的返回按钮事件啦"); //根据⾃⼰的需求实现⾃⼰的功能
+      }, false);
+
+      function pushHistory() {
+          var state = {
+              title: "title",
+              url: "#"
+          };
+          window.history.pushState(state, "title", "#");
+      }
+  </script>
   </body>
 </html>
